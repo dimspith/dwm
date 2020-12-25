@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=DWM
+Comment=The suckless tiling window manager
+Exec=startdwm
+Icon=dwm
+Terminal=false
+StartupNotify=false
+Categories=Application;
