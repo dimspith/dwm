@@ -12,12 +12,12 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Iosevka Term Extended:size=10", "monospace:size=10" };
 static const char dmenufont[]       = "Iosevka Term Extended:size=10";
-static const char col_fg[]               = "#f8f8f8";
-static const char col_fg_sel[]           = "#f8f8f8";
-static const char col_bg[]               = "#111111";
-static const char col_bg_sel[]           = "#1d1d1d";
+static const char col_fg[]               = "#ebdbb2";
+static const char col_fg_sel[]           = "#fbf1c7";
+static const char col_bg[]               = "#141413";
+static const char col_bg_sel[]           = "#242321";
 static const char col_border[]           = "#1d1d1d";
-static const char col_border_sel[]       = "#7986cb";
+static const char col_border_sel[]       = "#ffa724";
 static const char *colors[][3]           = {
     /*               fg          bg          border   */
     [SchemeNorm] = { col_fg,     col_bg,     col_border      },
@@ -109,9 +109,9 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY|ShiftMask,             XK_q,      killclient,     {0} },
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
-	{ MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
+	{ MODKEY|ShiftMask,             XK_f,      setlayout,      {.v = &layouts[1]} },
 	{ MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-  	{ MODKEY|ShiftMask,             XK_f,      fullscreen,     {0} },
+  	{ MODKEY,                       XK_f,      fullscreen,     {0} },
 	{ MODKEY,                       XK_space,  setlayout,      {0} },
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
