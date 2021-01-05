@@ -24,11 +24,11 @@ slstatus &
 picom &
 
 # Start the volume icon and backlight controls
-volumeicon &
+pnmixer &
 xfce4-power-manager &
 
 # Start network applet
-cmst -m &
+cmst &
 
 # Configure keyboard
 setxkbmap -model pc105 -layout us,gr -option grp:rctrl_toggle -option ctrl:nocaps &
