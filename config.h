@@ -10,8 +10,8 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Hurmit NF:size=10", "monospace:size=10" };
-static const char dmenufont[]       = "Hurmit NF:size=10";
+static const char *fonts[]          = { "Fira Code:size=10", "monospace:size=10" };
+static const char dmenufont[]       = "Fira Code:size=10";
 static const char col_fg[]               = "#ebdbb2";
 static const char col_fg_sel[]           = "#fbf1c7";
 static const char col_bg[]               = "#141413";
