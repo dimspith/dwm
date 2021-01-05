@@ -978,7 +978,7 @@ drawbar(Monitor *m)
 	drw_rect(drw, x, 0, m->ww - sw - x, bh, 1, 1);
 
 	if ((w = m->ww - sw - stw - x) > bh) {
-		bartabcalculate(m, x, sw, -1, bartabdraw);
+		bartabcalculate(m, x, sw+stw, -1, bartabdraw);
 		if (BARTAB_BOTTOMBORDER) {
 			drw_setscheme(drw, scheme[SchemeTabActive]);
 			drw_rect(drw, 0, bh - 1, m->ww, 1, 1, 0);
