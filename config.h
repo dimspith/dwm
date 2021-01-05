@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 1;        /* border pixel of windows */
+static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -19,9 +19,11 @@ static const char col_bg_sel[]           = "#242321";
 static const char col_border[]           = "#1d1d1d";
 static const char col_border_sel[]       = "#ffa724";
 static const char *colors[][3]           = {
-    /*               fg          bg          border   */
-    [SchemeNorm] = { col_fg,     col_bg,     col_border      },
-    [SchemeSel]  = { col_fg_sel, col_bg_sel, col_border_sel  },
+    /*                       fg          bg          border   */
+    [SchemeNorm]         = { col_fg,     col_bg,     col_border      },
+    [SchemeSel]          = { col_fg_sel, col_bg_sel, col_border_sel  },
+	[SchemeTabActive]    = { col_fg_sel, col_bg,     col_fg_sel  },
+	[SchemeTabInactive]  = { col_fg_sel, col_bg,     col_fg  }
 };
 
 /* tagging */
@@ -49,6 +51,15 @@ static const Rule rules[] = {
 static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
 static const int nmaster     = 1;    /* number of clients in master area */
 static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+
+/* Bartabgroups properties */
+#define BARTAB_BORDERS 1       // 0 = off, 1 = on
+#define BARTAB_BOTTOMBORDER 1  // 0 = off, 1 = on
+#define BARTAB_TAGSINDICATOR 1 // 0 = off, 1 = on if >1 client/view tag, 2 = always on
+#define BARTAB_TAGSPX 5        // # pixels for tag grid boxes
+#define BARTAB_TAGSROWS 3      // # rows in tag grid (9 tags, e.g. 3x3)
+static void (*bartabmonfns[])(Monitor *) = { monocle /* , customlayoutfn */ };
+static void (*bartabfloatfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
