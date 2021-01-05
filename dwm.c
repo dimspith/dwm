@@ -975,7 +975,7 @@ drawbar(Monitor *m)
 	x = drw_text(drw, x, 0, w, bh, lrpad / 2, m->ltsymbol, 0);
 
 	// Draw bartabgroups
-	drw_rect(drw, x, 0, m->ww - sw - x, bh, 1, 1);
+	drw_rect(drw, x, 0, m->ww - sw - x - stw, bh, 1, 1);
 
 	if ((w = m->ww - sw - stw - x) > bh) {
 		bartabcalculate(m, x, sw+stw, -1, bartabdraw);
