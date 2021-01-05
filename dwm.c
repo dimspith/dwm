@@ -169,6 +169,9 @@ struct Systray {
 /* function declarations */
 static void applyrules(Client *c);
 static int applysizehints(Client *c, int *x, int *y, int *w, int *h, int interact);
+static void bartabdraw(Monitor *m, Client *c, int unused, int x, int w, int groupactive);
+static void battabclick(Monitor *m, Client *c, int passx, int x, int w, int unused);
+static void bartabcalculate(Monitor *m, int offx, int sw, int passx, void(*tabfn)(Monitor *, Client *, int, int, int, int));
 static void arrange(Monitor *m);
 static void arrangemon(Monitor *m);
 static void attach(Client *c);
