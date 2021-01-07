@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
@@ -10,20 +10,26 @@ static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display 
 static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "FiraMono Nerd Font:size=10", "monospace:size=10" };
+static const char *fonts[]          = { "FiraMono Nerd Font:size=10:style=medium", "monospace:size=10" };
 static const char dmenufont[]       = "FiraMono Nerd Font:size=10";
-static const char col_fg[]               = "#ebdbb2";
-static const char col_fg_sel[]           = "#fbf1c7";
-static const char col_bg[]               = "#141413";
-static const char col_bg_sel[]           = "#242321";
-static const char col_border[]           = "#1d1d1d";
-static const char col_border_sel[]       = "#ffa724";
+static const char col_fg[]               = "#f0f0f0";
+static const char col_bg[]               = "#0f0f0f";
+static const char col_fg_sel[]           = "#c0c0c0";
+static const char col_bg_sel[]           = "#262626";
+static const char col_border[]           = "#141413";
+static const char col_border_sel[]       = "#ac8aac";
+
+static const char col_inact_fg[]         = "#f0f0f0";
+static const char col_inact_bg[]         = "#0f0f0f";
+static const char col_inact_border[]     = "#ac8aac";
+
+/*static const char col_border_sel[]       = "#ffa724";*/
 static const char *colors[][3]           = {
     /*                       fg          bg          border   */
     [SchemeNorm]         = { col_fg,     col_bg,     col_border      },
     [SchemeSel]          = { col_fg_sel, col_bg_sel, col_border_sel  },
-	[SchemeTabActive]    = { col_fg_sel, col_bg,     col_fg_sel  },
-	[SchemeTabInactive]  = { col_fg_sel, col_bg,     col_fg  }
+	[SchemeTabActive]    = { col_inact_fg, col_inact_bg,  col_inact_border  },
+	[SchemeTabInactive]  = { col_inact_fg, col_inact_bg,  col_inact_border  }
 };
 
 /* tagging */
@@ -63,9 +69,9 @@ static void (*bartabfloatfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ " ",      tile },    /* first entry is default */
-	{ " ",      NULL },    /* no layout function means floating behavior */
-	{ " ",      monocle },
+	{ "[T]",      tile },    /* first entry is default */
+	{ "[F]",      NULL },    /* no layout function means floating behavior */
+	{ "[M]",      monocle },
 	{ "[D]",      deck },
 };
 
