@@ -14,12 +14,12 @@ static const char *fonts[]          = { "FiraMono Nerd Font:size=10:style=medium
 static const char dmenufont[]       = "FiraMono Nerd Font:size=10";
 static const char col_fg[]               = "#f0f0f0";
 static const char col_bg[]               = "#0f0f0f";
-static const char col_fg_sel[]           = "#c0c0c0";
-static const char col_bg_sel[]           = "#262626";
+static const char col_fg_sel[]           = "#f0f0f0";
+static const char col_bg_sel[]           = "#4c4c4c";
 static const char col_border[]           = "#141413";
 static const char col_border_sel[]       = "#ac8aac";
 
-static const char col_inact_fg[]         = "#f0f0f0";
+static const char col_inact_fg[]         = "#cacaca";
 static const char col_inact_bg[]         = "#0f0f0f";
 static const char col_inact_border[]     = "#ac8aac";
 
