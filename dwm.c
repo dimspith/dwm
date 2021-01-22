@@ -601,7 +601,7 @@ buttonpress(XEvent *e)
 		else if (ev->x > selmon->ww - TEXTW(stext) - getsystraywidth())
 			click = ClkStatusText;
 		else // Focus clicked tab bar item
-			bartabcalculate(selmon, x, TEXTW(stext) - lrpad + 2, ev->x, battabclick);
+			bartabcalculate(selmon, x, TEXTW(stext) - lrpad + 2 + getsystraywidth(), ev->x, battabclick);
 	} else if ((c = wintoclient(ev->window))) {
 		focus(c);
 		restack(selmon);
