@@ -286,6 +286,7 @@ static int xerrordummy(Display *dpy, XErrorEvent *ee);
 static int xerrorstart(Display *dpy, XErrorEvent *ee);
 static void zoom(const Arg *arg);
 static void focusmaster(const Arg *arg);
+void resetnmaster(const Arg *arg);
 
 /* variables */
 static Systray *systray =  NULL;
@@ -2861,6 +2862,13 @@ focusmaster(const Arg *arg)
 
 	if (c)
 		focus(c);
+}
+
+void
+resetnmaster(const Arg *arg)
+{
+    selmon->nmaster = 1;
+    arrange(selmon);
 }
 
 int
