@@ -1,29 +1,39 @@
 /* See LICENSE file for copyright and license details. */
 
-/* appearance */
+/************************************/
+/*            APPEARANCE            */
+/************************************/
+
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 6;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
+
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;     /* 0 means no systray */
+
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
+
 static const char *fonts[]          = { "FiraMono Nerd Font:size=10:style=medium", "monospace:size=10" };
 static const char dmenufont[]       = "FiraMono Nerd Font:size=10";
+
+
+/************************************/
+/*              COLORS              */
+/************************************/
+
 static const char col_fg[]               = "#f0f0f0";
 static const char col_bg[]               = "#0f0f0f";
 static const char col_fg_sel[]           = "#f0f0f0";
 static const char col_bg_sel[]           = "#4c4c4c";
 static const char col_border[]           = "#141413";
 static const char col_border_sel[]       = "#ac8aac";
-
 static const char col_inact_fg[]         = "#cacaca";
 static const char col_inact_bg[]         = "#0f0f0f";
 static const char col_inact_border[]     = "#ac8aac";
 
-/*static const char col_border_sel[]       = "#ffa724";*/
 static const char *colors[][3]           = {
     /*                       fg          bg          border   */
     [SchemeNorm]         = { col_fg,     col_bg,     col_border      },
@@ -32,14 +42,36 @@ static const char *colors[][3]           = {
 	[SchemeTabInactive]  = { col_inact_fg, col_inact_bg,  col_inact_border  }
 };
 
+/************************************/
+/*        LAYOUTS/TAGS/RULES        */
+/************************************/
+
+/* layout(s) */
+static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
+static const int nmaster     = 1;    /* number of clients in master area */
+static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
+
 /* tagging */
 static char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
+/* Bartabgroups properties */
+#define BARTAB_BORDERS 1       // 0 = off, 1 = on
+#define BARTAB_BOTTOMBORDER 0  // 0 = off, 1 = on
+#define BARTAB_TAGSINDICATOR 1 // 0 = off, 1 = on if >1 client/view tag, 2 = always on
+#define BARTAB_TAGSPX 5        // # pixels for tag grid boxes
+#define BARTAB_TAGSROWS 3      // # rows in tag grid (9 tags, e.g. 3x3)
+static void (*bartabmonfns[])(Monitor *) = { monocle /* , customlayoutfn */ };
+static void (*bartabfloatfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
+
+static const Layout layouts[] = {
+	/* symbol     arrange function */
+	{ "~Tile~",       tile },    /* first entry is default */
+	{ "~Float~",      NULL },    /* no layout function means floating behavior */
+	{ "~Monocle~",    monocle },
+	{ "~Deck~",       deck }
+};
+
 static const Rule rules[] = {
-	/* xprop(1):
-	 *	WM_CLASS(STRING) = instance, class
-	 *	WM_NAME(STRING) = title
-	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
     { "strawberry",      NULL,     NULL,           1 << 5,    0,          -1 },
     { "Steam",           NULL,     NULL,           1 << 4,    0,          -1 },
@@ -53,27 +85,9 @@ static const Rule rules[] = {
     { "Alacritty",       NULL,     NULL,                0,    0,           1 },
 };
 
-/* layout(s) */
-static const float mfact     = 0.50; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
-
-/* Bartabgroups properties */
-#define BARTAB_BORDERS 1       // 0 = off, 1 = on
-#define BARTAB_BOTTOMBORDER 0  // 0 = off, 1 = on
-#define BARTAB_TAGSINDICATOR 1 // 0 = off, 1 = on if >1 client/view tag, 2 = always on
-#define BARTAB_TAGSPX 5        // # pixels for tag grid boxes
-#define BARTAB_TAGSROWS 3      // # rows in tag grid (9 tags, e.g. 3x3)
-static void (*bartabmonfns[])(Monitor *) = { monocle /* , customlayoutfn */ };
-static void (*bartabfloatfns[])(Monitor *) = { NULL /* , customlayoutfn */ };
-
-static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "[T]",      tile },    /* first entry is default */
-	{ "[F]",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
-	{ "[D]",      deck },
-};
+/************************************/
+/*          KEYS/COMMANDS           */
+/************************************/
 
 /* key definitions */
 #define MODKEY Mod4Mask
