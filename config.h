@@ -101,6 +101,7 @@ static const char *editorcmd[]  = { "emacsclient", "-c", NULL };
 static const char *progmenu[]   = { "rofi", "-show", "drun", NULL};
 static const char *browsercmd[] = { "firefox", NULL };
 static const char *fmcmd[]      = { "alacritty", "-e", "vifm", NULL };
+static const char *scrotcmd[]   = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -112,6 +113,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd} },
     { MODKEY|ShiftMask,             XK_e,      spawn,          {.v = editorcmd} },
     { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = fmcmd} },
+    { 0,                            XK_Print,  spawn,          {.v = scrotcmd} },
 
     /* Window/Layout manipulation */
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
