@@ -26,7 +26,7 @@ In order to build dwm you need the `Xlib` header files.
 
 ### If you plan to use the default configuration some programs are also required:
 * **For keybinds, on `config.h`**
-  * My patched `dmenu` version (command launcher)
+  * My patched [dmenu](https://github.com/dimspith/dmenu) version (command launcher)
   * `rofi` (program launcher)
   * `firefox` (browser)
   * `emacs` (editor)
@@ -41,7 +41,7 @@ In order to build dwm you need the `Xlib` header files.
   * (OPTIONAL) `xfce4-power-manager` (for battery and power management)
   * (OPTIONAL) `setxkbmap` (for language configuration. the default is EN|GR with RCTRL as a toggle)
 * **For the status bar**
-  * My patched `slstatus` version 
+  * My patched [slstatus](https://github.com/dimspith/slstatus) version 
 
 ### If you don't plan on using the defaults here is how to change them:
 #### **Changing programs on keybinds**
