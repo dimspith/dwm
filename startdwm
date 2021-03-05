@@ -33,9 +33,6 @@ cmst -m &
 # Configure keyboard
 setxkbmap -model pc105 -layout us,gr -option grp:rctrl_toggle -option ctrl:nocaps &
 
-# Create the ~/.cache dir if it does not exist
-mkdir -p ~/.cache
-
 # Repeatedly start dwm for live restart
 while true; do
     # Log stderror to a file 
