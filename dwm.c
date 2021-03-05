@@ -2867,7 +2867,7 @@ focusmaster(const Arg *arg)
 void
 resetnmaster(const Arg *arg)
 {
-    selmon->nmaster = 1;
+    selmon->nmaster = selmon->pertag->nmasters[selmon->pertag->curtag] = 1;
     arrange(selmon);
 }
 
