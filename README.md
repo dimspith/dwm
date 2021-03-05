@@ -9,7 +9,16 @@ Here is a screenshot of my current setup for reference:
 Features
 ------------
 
-TODO
+* Move windows up the stack with `Mod+Shift+J/K`
+* `Tile`, `Monocle` and `Deck` layouts
+* Fullscreen with `Mod+f` using the `Monocle` layout (**fullscreen patch**)
+* All window titles shown in the bar (**bartabgroups patch**)
+* EWMH Compliance (**ewmhtags patch**)
+* Different layouts per tag (**pertag patch**)
+* System tray (**systray patch**)
+* Mouse follows focused window (**warp patch**)
+* Urgent windows automatically gain focus
+* Gaps on all layouts (**uselessgap patch**)
 
 Requirements
 ------------
@@ -92,7 +101,13 @@ The following changes are made when installing dwm:
 If you make any changes to the header files or source code of dwm you should rebuild and install dwm to apply your changes by running `make clean install` again.
 
 Running dwm
------------
+-----------Floating layout
+#### The easy way
+
+If you have a login manager installed a new entry should appear allowing you to run dwm directly.
+
+#### The manual way
+
 Add the following line to your .xinitrc to start dwm using startx:
 
     exec startdwm
@@ -104,3 +119,49 @@ the DISPLAY environment variable is set correctly, e.g.:
 
 (This will start dwm on display :1 of the host foo.bar.)
 
+
+Keybindings
+-----------
+
+### Launching Programs
+
+|Keybind      |Action                   |Default      |  
+|-------------|-------------------------|-------------|
+| Mod-p       | Launch Command Launcher | Dmenu       |
+| Mod-Shift-p | Launch Program Launcher | Rofi        |
+| Mod-Return  | Launch Terminal         | Alacritty   |
+| Mod-Shift-b | Launch Browser          | Firefox     |
+| Mod-Shift-e | Launch Editor           | Emacsclient |
+| Mod-Shift-f | Launch File Manager     | Vifm        |
+
+### Miscellaneous
+
+|Keybind            |Action                             |
+|-------------------|-----------------------------------|
+| Mod-j             | Focus next window                 |
+| Mod-k             | Focus previous window             |
+| Mod-Space         | Focus master window               |
+| Mod-Shift-j       | Move window forward               |
+| Mod-Shift-k       | Move window backward              |
+| Mod-i             | Increase master window capacity   |
+| Mod-o             | Decrease master window capacity   |
+| Mod-u             | Reset master window capacity      |
+| Mod-h             | Decrease master window size       |
+| Mod-l             | increase master window size       |
+| Mod-Shift-Return  | Move focused window to master     |
+| Mod-Tab           | Switch to previous tag            |
+| Mod-Shift-q       | Kill focused window               |
+| Mod-t             | Tiling layout                     |
+| Mod-f             | Fullscreen focused window         |
+| Mod-m             | Monocle layout                    |
+| Mod-d             | Deck layout                       |
+| Mod-Control-f     | Floating layout                   |
+| Mod-Shift-Space   | Toggle floating on focused window |
+| Mod-0             | Show all tags                     |
+| Mod-Shift-0       | Show focused window on all tags   |
+| Mod-,             | Focus previous monitor            |
+| Mod-.             | Focus next monitor                |
+| Mod-1..9          | Focus tags 1..9                   |
+| Mod-Shift-1..9    | FMove window to tags 1..9         |
+| Mod-Shift-r       | Restart dwm                       |
+| Mod-b             | Toggle bar visibility             |
