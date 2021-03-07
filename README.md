@@ -80,7 +80,6 @@ Here is a minimal example of a custom status bar that could be included in the `
     do
     	sleep 1
     done &
-    exec dwm
 
 Installation
 ------------
