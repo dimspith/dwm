@@ -29,13 +29,13 @@ static const char col_bg[]             = "#0f0f0f";
 static const char col_fg_sel[]         = "#f0f0f0";
 static const char col_bg_sel[]         = "#4c4c4c";
 static const char col_border[]         = "#141413";
-static const char col_border_sel[]     = "#ac8aac";
+static const char col_border_sel[]     = "#9ec3c4";
 static const char col_inact_fg[]       = "#cacaca";
 static const char col_inact_bg[]       = "#0f0f0f";
 static const char col_inact_border[]   = "#ac8aac";
-static const char col_dmenu_h_fg[]     = "#c4c19e";
+static const char col_dmenu_h_fg[]     = "#9ec3c4";
 static const char col_dmenu_h_bg[]     = "#0f0f0f";
-static const char col_dmenu_h_sel_fg[] = "#c4c19e";
+static const char col_dmenu_h_sel_fg[] = "#9ec3c4";
 static const char col_dmenu_h_sel_bg[] = "#4c4c4c";
 
 static const char *colors[][3]           = {
