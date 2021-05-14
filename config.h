@@ -82,10 +82,10 @@ static const Rule rules[] = {
     { "Steam",           NULL,     NULL,                        1 << 4,    0,          -1 },
     { "qBittorrent",     NULL,     NULL,                        1 << 5,    0,          -1 },
     { "TelegramDesktop", NULL,     NULL,                        1 << 3,    0,          -1 },
-    { "discord",         NULL,     NULL,                        1 << 3,    0,          -1 },
     { "Discord",         NULL,     NULL,                        1 << 3,    0,          -1 },
-    { "element",         NULL,     NULL,                        1 << 3,    0,          -1 },
     { "Element",         NULL,     NULL,                        1 << 3,    0,          -1 },
+    { "Anki",            NULL,     "Add",                       0,         1,          -1 },
+    { "Thunderbird",     NULL,     "New Event:",                0,         1,          -1 },
 
 };
 

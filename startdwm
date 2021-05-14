@@ -33,6 +33,9 @@ cmst -m &
 # Configure keyboard
 setxkbmap -model pc105 -layout us,gr -option grp:rctrl_toggle -option ctrl:nocaps &
 
+# Start polkit-gnome
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
 # Repeatedly start dwm for live restart
 while true; do
     # Log stderror to a file 
