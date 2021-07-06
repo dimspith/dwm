@@ -28,7 +28,7 @@ pnmixer &
 xfce4-power-manager &
 
 # Start network applet
-cmst -m &
+connman-gtk --tray &
 
 # Configure keyboard
 setxkbmap -model pc105 -layout us,gr -option grp:rctrl_toggle -option ctrl:nocaps &
