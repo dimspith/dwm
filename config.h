@@ -124,7 +124,7 @@ static const char *editorcmd[]  = { "emacsclient", "-c", NULL };
 static const char *progmenu[]   = { "rofi", "-show", "drun", NULL};
 static const char *browsercmd[] = { "firefox", NULL };
 static const char *fmcmd[]      = { "alacritty", "-e", "vifm", NULL };
-static const char *wscmd[]      = { "rofi", "-show", "window", NULL };
+static const char *wscmd[]      = { "window-switcher", NULL };
 static const char *scrotcmd[]   = { "flameshot", "gui", NULL };
 
 static Key keys[] = {
