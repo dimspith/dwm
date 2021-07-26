@@ -16,8 +16,8 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "FiraMono Nerd Font:size=10:style=medium", "monospace:size=10" };
-static const char dmenufont[]       = "FiraMono Nerd Font:size=10";
+static const char *fonts[]          = { "scientifica:size=13:style=medium", "monospace:size=10" };
+static const char dmenufont[]       = "scientifica:size=13:style=medium";
 
 
 /************************************/
@@ -85,7 +85,9 @@ static const Rule rules[] = {
     { "Discord",         NULL,     NULL,                        1 << 3,    0,          -1 },
     { "Element",         NULL,     NULL,                        1 << 3,    0,          -1 },
     { "Anki",            NULL,     "Add",                       0,         1,          -1 },
+    { "Thunderbird",     NULL,     NULL,                        1 << 8,    0,          -1 },
     { "Thunderbird",     NULL,     "New Event:",                0,         1,          -1 },
+    { "Thunderbird",     NULL,     "Feed Subscriptions",        0,         1,          -1 },
 
 };
 
