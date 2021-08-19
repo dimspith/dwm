@@ -1,5 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
+/* Include special keyboard keys (for brightness and volume) */
+#include <X11/XF86keysym.h>
+
 /************************************/
 /*            APPEARANCE            */
 /************************************/
@@ -16,8 +19,8 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "scientifica:size=13:style=medium", "monospace:size=10" };
-static const char dmenufont[]       = "scientifica:size=13:style=medium";
+static const char *fonts[]          = { "Iosevka Slab:size=12:style=medium", "monospace:size=10" };
+static const char dmenufont[]       = "Iosevka Slab:size=12:style=medium";
 
 
 /************************************/
@@ -103,10 +106,10 @@ static const Rule rules[] = {
     { MODKEY|ShiftMask,             KEY,      tag,            {.ui = 1 << TAG} }, \
     { MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
-/* helper for spawning shell commands in the pre dwm-5.0 fashion */
+/* Helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
-/* commands */
+/* Commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[]   = { "dmenu_run",
                                     "-p",  "Run: ",
@@ -121,13 +124,20 @@ static const char *dmenucmd[]   = { "dmenu_run",
                                     "-shb", col_dmenu_h_sel_bg,
                                     NULL };
 
-static const char *termcmd[]    = { "alacritty", NULL };
-static const char *editorcmd[]  = { "emacsclient", "-c", NULL };
-static const char *progmenu[]   = { "rofi", "-show", "drun", NULL};
-static const char *browsercmd[] = { "firefox", NULL };
-static const char *fmcmd[]      = { "alacritty", "-e", "vifm", NULL };
-static const char *wscmd[]      = { "window-switcher", NULL };
-static const char *scrotcmd[]   = { "flameshot", "gui", NULL };
+static const char *termcmd[]         = { "alacritty", NULL };
+static const char *editorcmd[]       = { "emacsclient", "-c", NULL };
+static const char *progmenu[]        = { "rofi", "-show", "drun", NULL};
+static const char *browsercmd[]      = { "firefox", NULL };
+static const char *fmcmd[]           = { "alacritty", "-e", "nnn", "-de", NULL };
+static const char *wscmd[]           = { "window-switcher", NULL };
+static const char *scrotcmd[]        = { "flameshot", "gui", NULL };
+
+static const char *brightness_up[]   = { "brightness.sh", "inc", NULL };
+static const char *brightness_down[] = { "brightness.sh", "dec", NULL };
+
+static const char *upvol[]   = { "volume.sh", "inc", NULL };
+static const char *downvol[] = { "volume.sh", "dec", NULL };
+static const char *mutevol[] = { "volume.sh", "toggle", NULL };
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
@@ -142,6 +152,15 @@ static Key keys[] = {
     { Mod1Mask,                     XK_Tab,    spawn,          {.v = wscmd} },
     { 0,                            XK_Print,  spawn,          {.v = scrotcmd} },
 
+    /* Brightness controls */
+    { 0,                            XF86XK_MonBrightnessUp,   spawn, {.v = brightness_up}   },
+    { 0,                            XF86XK_MonBrightnessDown, spawn, {.v = brightness_down} },
+
+    /* Volume controls */
+	{ 0,                            XF86XK_AudioLowerVolume, spawn, {.v = downvol } },
+	{ 0,                            XF86XK_AudioMute,        spawn, {.v = mutevol } },
+	{ 0,                            XF86XK_AudioRaiseVolume, spawn, {.v = upvol   } },
+    
     /* Window/Layout manipulation */
     { MODKEY,                       XK_b,      togglebar,      {0} },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },

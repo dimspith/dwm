@@ -18,23 +18,22 @@ emacs --daemon &
 dunst &
 
 # Start status bar
-slstatus &
+dwmblocks &
 
 # Start compositor
 picom &
 
-# Start the volume icon and backlight controls
-pnmixer &
-xfce4-power-manager &
-
-# Start network applet
-connman-gtk --tray &
+# Start the volume icon
+pasystray &
 
 # Configure keyboard
 setxkbmap -model pc105 -layout us,gr -option grp:rctrl_toggle -option ctrl:nocaps &
 
 # Start polkit-gnome
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+
+# Start network applet
+connman-gtk --tray &
 
 # Repeatedly start dwm for live restart
 while true; do
