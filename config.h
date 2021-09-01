@@ -19,8 +19,8 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "Iosevka Slab:size=12:style=medium", "monospace:size=10" };
-static const char dmenufont[]       = "Iosevka Slab:size=12:style=medium";
+static const char *fonts[]          = { "SpaceMono NF:size=10:style=medium", "monospace:size=10" };
+static const char dmenufont[]       = "SpaceMono NF:size=10:style=medium";
 
 
 /************************************/
@@ -81,12 +81,13 @@ static const Layout layouts[] = {
 static const Rule rules[] = {
     /* class           instance    title                        tags mask  isfloating  monitor */
     { "Element",         NULL,     NULL,                        1 << 3,    0,          -1 },
-    { "strawberry",      NULL,     NULL,                        1 << 5,    0,          -1 },
-    { "Steam",           NULL,     NULL,                        1 << 4,    0,          -1 },
-    { "qBittorrent",     NULL,     NULL,                        1 << 5,    0,          -1 },
-    { "TelegramDesktop", NULL,     NULL,                        1 << 3,    0,          -1 },
-    { "Discord",         NULL,     NULL,                        1 << 3,    0,          -1 },
-    { "Element",         NULL,     NULL,                        1 << 3,    0,          -1 },
+    { "strawberry",      NULL,     NULL,                        1 << 7,    0,          -1 },
+    { "Steam",           NULL,     NULL,                        1 << 6,    0,          -1 },
+    { "qBittorrent",     NULL,     NULL,                        1 << 7,    0,          -1 },
+    { "TelegramDesktop", NULL,     NULL,                        1 << 5,    0,          -1 },
+    { "Discord",         NULL,     NULL,                        1 << 5,    0,          -1 },
+    { "Element",         NULL,     NULL,                        1 << 5,    0,          -1 },
+    { "obsidian",        NULL,     NULL,                        1 << 8,    0,          -1 },    
     { "Anki",            NULL,     "Add",                       0,         1,          -1 },
     { "Thunderbird",     NULL,     NULL,                        1 << 8,    0,          -1 },
     { "Thunderbird",     NULL,     "New Event:",                0,         1,          -1 },
@@ -217,4 +218,3 @@ static Button buttons[] = {
     { ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
     { ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-

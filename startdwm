@@ -33,7 +33,7 @@ setxkbmap -model pc105 -layout us,gr -option grp:rctrl_toggle -option ctrl:nocap
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 
 # Start network applet
-connman-gtk --tray &
+cmst -m &
 
 # Repeatedly start dwm for live restart
 while true; do

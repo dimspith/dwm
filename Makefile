@@ -59,8 +59,15 @@ scripts:
 	mkdir -p ${SCRIPTPATH}
 	cp -f scripts/* ${SCRIPTPATH}
 
+# Install all fonts to $FONTPATH/dwm
+fonts:
+	@echo -e "\e[94mINFO: Installing fonts...\e[0m"
+	mkdir -p ${FONTPATH}/dwm
+	cp -f fonts/* ${FONTPATH}/dwm
+
+
 # Install all user-local files
-deps: scripts
+deps: scripts fonts
 
 # Remove all user-local files
 remove-deps:
@@ -87,4 +94,4 @@ uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/startdwm
 
 
-.PHONY: all options clean dist install uninstall scripts
+.PHONY: all options clean dist install uninstall scripts fonts

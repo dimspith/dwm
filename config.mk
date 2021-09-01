@@ -6,7 +6,8 @@ VERSION = 6.2
 # paths
 PREFIX = /usr/local
 MANPREFIX = ${PREFIX}/share/man
-SCRIPTPATH = ${HOME}/.local/bin/
+SCRIPTPATH = ${HOME}/.local/bin
+FONTPATH = ${HOME}/.local/share/fonts
 
 X11INC = /usr/X11R6/include
 X11LIB = /usr/X11R6/lib
