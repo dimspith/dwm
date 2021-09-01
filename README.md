@@ -11,7 +11,7 @@ Here is a screenshot of my current setup for reference:
 Features
 ------------
 
-* Move windows up the stack with `Mod+Shift+J/K` (can't move into master window)
+* Move windows through the stack with `Mod+Shift+J/K` and `Mod+Shift+Enter` to swap with the master window.
 * `Tile`, `Monocle` and `Deck` layouts
 * Fullscreen with `Mod+f` using the `Monocle` layout (**fullscreen patch**)
 * All window titles shown in the bar (**bartabgroups patch**)
@@ -19,17 +19,18 @@ Features
 * Different layouts per tag (**pertag patch**)
 * System tray (**systray patch**)
 * Mouse follows focused window (**warp patch**)
-* Urgent windows automatically gain focus
+* Urgent windows automatically gain focus (see `756a62b`)
 * Gaps on all layouts (**uselessgap patch**)
+* i3-style scratchpads (**dwm-scratchpads patch**) 
 * Custom scripts for controlling brightness and volume
 
 Requirements
 ------------
 In order to build dwm you need the `Xlib` header files.
 
-### If you plan to use the default configuration some programs are also required:
-* **For keybinds, on `config.h`**
-  * My patched [dmenu](https://github.com/dimspith/dmenu) version (command launcher)
+### If you plan on using the default configuration the following packages are required:
+* **For keybindings, on `config.h`**
+  * My (lightly) patched [dmenu](https://github.com/dimspith/dmenu) version (command launcher)
   * `rofi` (program launcher)
   * `firefox` (browser)
   * `emacs` (editor)
@@ -38,30 +39,27 @@ In order to build dwm you need the `Xlib` header files.
 * **For startup, on `startdwm`**
   * `wmname` (for misbehaving applications)
   * `emacs` (for the daemon)
-  * `nitrogen` (wallpaper setting)
+  * `nitrogen` (wallpapers)
   * `dunst` (notification daemon)
   * `picom` (compositor)
   * `volctl` (volume icon)
   * `cmst` (connmand applet for networking)
   * (OPTIONAL) `setxkbmap` (for language configuration. the default is EN|GR with RCTRL as a toggle)
 * **For the status bar**
-  * My patched [dwmblocks](https://github.com/dimspith/dwmblocks) version 
-
-### If you don't plan on using the defaults here is how to change them:
-#### **Changing programs on keybinds**
-
-Go to the `config.h` file in the section indicated in the screenshot below.
-
-![Keybind Commands](./keybind_commands.png "Keybind Commands")
+  * My patched [dwmblocks](https://github.com/dimspith/dwmblocks) (can be replaced in `startdwm`)
 
 Installation
 ------------
 Edit config.mk to match your local setup (dwm is installed into
 the `/usr/local` namespace by default).
 
+Custom scripts and fonts
+
 Run:
 * `make` to build dwm
-* `make deps` to install custom user-local stuff
+* `make deps` to install custom user-local stuff. The following are included.
+  * This includes fonts in the `fonts` directory 
+  * Custom scripts that are copied in `~/.local/bin`. The path can be changed u
 
 Afterwards enter the following command to install dwm (if
 necessary as root):
@@ -143,3 +141,6 @@ Keybindings
 | Mod-Shift-1..9    | Move window to tags 1..9          |
 | Mod-Shift-r       | Restart dwm                       |
 | Mod-b             | Toggle bar visibility             |
+| Mod--             | Show/hide windows in scratchpad   |
+| Mod-Shift--       | Hide window in scratchpad         |
+| Mod-=             | Remove window from scratchpad     |
