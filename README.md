@@ -1,12 +1,12 @@
 DWM - dynamic window manager
 ============================
-DWM is an extremely fast, small, and dynamic window manager for X.
-Instead of using a configuration file, this window manager is customized through editing its source code.
+DWM is an extremely fast, small, and dynamic window manager for X that is customized by editing it's source code.
 This version includes patches that aim to keep it's minimalistic nature while addressing some usability issues that come with it.
 
-Here is a screenshot of my current setup for reference:
+Here are two screenshots showcasing a clear desktop along with a busy one. The wallpaper can be found [here](https://whvn.cc/y8552x)
 
-![Setup](./preview.png "Setup")
+![Clear](./clear.png "Clear")
+![Busy](./busy.png "Busy")
 
 Features
 ------------
@@ -53,13 +53,11 @@ Installation
 Edit config.mk to match your local setup (dwm is installed into
 the `/usr/local` namespace by default).
 
-Custom scripts and fonts
-
 Run:
 * `make` to build dwm
-* `make deps` to install custom user-local stuff. The following are included.
-  * This includes fonts in the `fonts` directory 
-  * Custom scripts that are copied in `~/.local/bin`. The path can be changed u
+* `make deps` (optional) to install custom user-local stuff. The following are included:
+  * Fonts from the `fonts` directory.
+  * Custom scripts from the `scripts` directory.
 
 Afterwards enter the following command to install dwm (if
 necessary as root):
@@ -67,15 +65,15 @@ necessary as root):
     make clean install
 
 The following changes are made when installing dwm:
-* The `dwm` binary and `startdwm` script are installed on the specified namespace (`/usr/local/` by default) and made executable
-* The `/usr/share/xsessions` directory is created
-* The desktop file `dwm.desktop` is copied in `/usr/share/xsessions` for use with login managers
-* A manpage entry is created (on `/usr/local/share/man` by default)
-* Custom scripts are installed in `~/.local/bin/`
+* The `dwm` binary and `startdwm` script are installed on the specified namespace (`/usr/local/` by default) and made executable.
+* The `/usr/share/xsessions` directory is created.
+* The desktop file `dwm.desktop` is copied in `/usr/share/xsessions` to be used with login managers.
+* A manpage entry is created (on `/usr/local/share/man` by default).
 
 If you make any changes to the header files or source code of dwm you should rebuild and install dwm to apply your changes by running `make clean install` again.
 
 Running dwm
+-----------
 
 #### The easy way
 
@@ -100,47 +98,47 @@ Keybindings
 
 ### Launching Programs
 
-| Keybind     | Action                  | Default     |
-|-------------|-------------------------|-------------|
-| Mod-p       | Launch Command Launcher | Dmenu       |
-| Mod-Shift-p | Launch Program Launcher | Rofi        |
-| Mod-Return  | Launch Terminal         | Alacritty   |
-| Mod-Shift-b | Launch Browser          | Firefox     |
-| Mod-Shift-e | Launch Editor           | Emacsclient |
-| Mod-Shift-f | Launch File Manager     | nnn         |
-| Alt-Tab     | Launch Window Switcher  | Rofi        |
+| Shortcut    | Action                  | Default Program |
+|-------------|-------------------------|-----------------|
+| Mod-p       | Launch Command Launcher | Dmenu           |
+| Mod-Shift-p | Launch Program Launcher | Rofi            |
+| Mod-Return  | Launch Terminal         | Alacritty       |
+| Mod-Shift-b | Launch Browser          | Firefox         |
+| Mod-Shift-e | Launch Editor           | Emacsclient     |
+| Mod-Shift-f | Launch File Manager     | nnn             |
+| Alt-Tab     | Launch Window Switcher  | Rofi            |
 
 ### Miscellaneous
 
-| Keybind           | Action                            |
-|-------------------|-----------------------------------|
-| Mod-j             | Focus next window                 |
-| Mod-k             | Focus previous window             |
-| Mod-Space         | Focus master window               |
-| Mod-Shift-j       | Move window forward               |
-| Mod-Shift-k       | Move window backward              |
-| Mod-i             | Increase master window capacity   |
-| Mod-o             | Decrease master window capacity   |
-| Mod-u             | Reset master window capacity      |
-| Mod-h             | Decrease master window size       |
-| Mod-l             | increase master window size       |
-| Mod-Shift-Return  | Move focused window to master     |
-| Mod-Tab           | Switch to previous tag            |
-| Mod-Shift-q       | Kill focused window               |
-| Mod-t             | Tiling layout                     |
-| Mod-f             | Fullscreen focused window         |
-| Mod-m             | Monocle layout                    |
-| Mod-d             | Deck layout                       |
-| Mod-Control-f     | Floating layout                   |
-| Mod-Shift-Space   | Toggle floating on focused window |
-| Mod-0             | Show all tags                     |
-| Mod-Shift-0       | Show focused window on all tags   |
-| Mod-,             | Focus previous monitor            |
-| Mod-.             | Focus next monitor                |
-| Mod-1..9          | Focus tags 1..9                   |
-| Mod-Shift-1..9    | Move window to tags 1..9          |
-| Mod-Shift-r       | Restart dwm                       |
-| Mod-b             | Toggle bar visibility             |
-| Mod--             | Show/hide windows in scratchpad   |
-| Mod-Shift--       | Hide window in scratchpad         |
-| Mod-=             | Remove window from scratchpad     |
+| Shortcut         | Action                            |
+|------------------|-----------------------------------|
+| Mod-j            | Focus next window                 |
+| Mod-k            | Focus previous window             |
+| Mod-Space        | Focus master window               |
+| Mod-Shift-j      | Move window forward               |
+| Mod-Shift-k      | Move window backward              |
+| Mod-i            | Increase master window capacity   |
+| Mod-o            | Decrease master window capacity   |
+| Mod-u            | Reset master window capacity      |
+| Mod-h            | Decrease master window size       |
+| Mod-l            | increase master window size       |
+| Mod-Shift-Return | Move focused window to master     |
+| Mod-Tab          | Switch to previous tag            |
+| Mod-Shift-q      | Kill focused window               |
+| Mod-t            | Tiling layout                     |
+| Mod-f            | Fullscreen focused window         |
+| Mod-m            | Monocle layout                    |
+| Mod-d            | Deck layout                       |
+| Mod-Control-f    | Floating layout                   |
+| Mod-Shift-Space  | Toggle floating on focused window |
+| Mod-0            | Show all tags                     |
+| Mod-Shift-0      | Show focused window on all tags   |
+| Mod-,            | Focus previous monitor            |
+| Mod-.            | Focus next monitor                |
+| Mod-1..9         | Focus tags 1..9                   |
+| Mod-Shift-1..9   | Move window to tags 1..9          |
+| Mod-Shift-r      | Restart dwm                       |
+| Mod-b            | Toggle bar visibility             |
+| Mod--            | Show/hide windows in scratchpad   |
+| Mod-Shift--      | Hide window in scratchpad         |
+| Mod-=            | Remove window from scratchpad     |

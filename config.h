@@ -9,7 +9,7 @@
 
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int gappx     = 8;        /* gaps between windows */
-static const unsigned int snap      = 32;       /* snap pixel */
+static const unsigned int snap      = 10;       /* snap pixel */
 
 static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
 static const unsigned int systrayspacing = 2;   /* systray spacing */
@@ -19,8 +19,8 @@ static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 
-static const char *fonts[]          = { "SpaceMono NF:size=10:style=medium", "monospace:size=10" };
-static const char dmenufont[]       = "SpaceMono NF:size=10:style=medium";
+static const char *fonts[]          = { "SpaceMono NF:size=10:style=bold", "monospace:size=10" };
+static const char dmenufont[]       = "SpaceMono NF:size=10:style=bold";
 
 
 /************************************/
@@ -29,24 +29,29 @@ static const char dmenufont[]       = "SpaceMono NF:size=10:style=medium";
 
 static const char col_fg[]             = "#f0f0f0";
 static const char col_bg[]             = "#0f0f0f";
-static const char col_fg_sel[]         = "#f0f0f0";
-static const char col_bg_sel[]         = "#4c4c4c";
+static const char col_bg_light[]       = "#4c4c4c";
 static const char col_border[]         = "#141413";
+
+static const char col_fg_sel[]         = "#0f0f0f";
+static const char col_bg_sel[]         = "#c49ec4";
 static const char col_border_sel[]     = "#9ec3c4";
+
 static const char col_inact_fg[]       = "#cacaca";
 static const char col_inact_bg[]       = "#0f0f0f";
 static const char col_inact_border[]   = "#ac8aac";
+
 static const char col_dmenu_h_fg[]     = "#9ec3c4";
 static const char col_dmenu_h_bg[]     = "#0f0f0f";
-static const char col_dmenu_h_sel_fg[] = "#9ec3c4";
-static const char col_dmenu_h_sel_bg[] = "#4c4c4c";
+static const char col_dmenu_h_sel_fg[] = "#0f0f0f";
+static const char col_dmenu_h_sel_bg[] = "#c49ec4";
 
 static const char *colors[][3]           = {
     /*                       fg            bg               border   */
-    [SchemeNorm]         = { col_fg,       col_bg,        col_border      },
-    [SchemeSel]          = { col_fg_sel,   col_bg_sel,    col_border_sel  },
-    [SchemeTabActive]    = { col_inact_fg, col_inact_bg,  col_inact_border  },
-    [SchemeTabInactive]  = { col_inact_fg, col_inact_bg,  col_inact_border  }
+    [SchemeNorm]         = { col_fg,       col_bg,        col_border       },
+    [SchemeSel]          = { col_fg_sel,   col_bg_sel,    col_border_sel   },
+    [SchemeTabSel]       = { col_fg,       col_bg_light,  col_border_sel   },
+    [SchemeTabActive]    = { col_inact_fg, col_inact_bg,  col_inact_border },
+    [SchemeTabInactive]  = { col_inact_fg, col_inact_bg,  col_inact_border }
 };
 
 /************************************/

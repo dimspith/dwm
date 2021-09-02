@@ -76,7 +76,7 @@
 
 /* enums */
 enum { CurNormal, CurResize, CurMove, CurLast }; /* cursor */
-enum { SchemeNorm, SchemeSel, SchemeTabActive, SchemeTabInactive }; /* color schemes */
+enum { SchemeNorm, SchemeSel, SchemeTabSel, SchemeTabActive, SchemeTabInactive }; /* color schemes */
 enum { NetSupported, NetWMName, NetWMState, NetWMCheck,
        NetSystemTray, NetSystemTrayOP, NetSystemTrayOrientation, NetSystemTrayOrientationHorz,
        NetWMFullscreen, NetActiveWindow, NetWMWindowType,
@@ -460,7 +460,7 @@ bartabdraw(Monitor *m, Client *c, int unused, int x, int w, int groupactive) {
 	int i, nclienttags = 0, nviewtags = 0;
 
 	drw_setscheme(drw, scheme[
-		m->sel == c ? SchemeSel : (groupactive ? SchemeTabActive: SchemeTabInactive)
+		m->sel == c ? SchemeTabSel : (groupactive ? SchemeTabActive: SchemeTabInactive)
 	]);
 	drw_text(drw, x, 0, w, bh, lrpad / 2, c->name, 0);
 
