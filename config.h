@@ -135,7 +135,6 @@ static const char *editorcmd[]       = { "emacsclient", "-c", NULL };
 static const char *progmenu[]        = { "rofi", "-show", "drun", NULL};
 static const char *browsercmd[]      = { "firefox", NULL };
 static const char *fmcmd[]           = { "alacritty", "-e", "nnn", "-de", NULL };
-static const char *wscmd[]           = { "window-switcher", NULL };
 static const char *scrotcmd[]        = { "flameshot", "gui", NULL };
 
 static const char *brightness_up[]   = { "brightness.sh", "inc", NULL };
@@ -155,7 +154,6 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_b,      spawn,          {.v = browsercmd} },
     { MODKEY|ShiftMask,             XK_e,      spawn,          {.v = editorcmd} },
     { MODKEY|ShiftMask,             XK_f,      spawn,          {.v = fmcmd} },
-    { Mod1Mask,                     XK_Tab,    spawn,          {.v = wscmd} },
     { 0,                            XK_Print,  spawn,          {.v = scrotcmd} },
 
     /* Brightness controls */

@@ -106,7 +106,6 @@ Keybindings
 | Mod-Shift-b | Launch Browser          | Firefox         |
 | Mod-Shift-e | Launch Editor           | Emacsclient     |
 | Mod-Shift-f | Launch File Manager     | nnn             |
-| Alt-Tab     | Launch Window Switcher  | Rofi            |
 
 ### Miscellaneous
 
