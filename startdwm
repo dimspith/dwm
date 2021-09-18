@@ -1,12 +1,16 @@
 #!/bin/sh
 
-
 ###############
 ## Autostart ##
 ###############
 
 # Set wmname to LG3D
 wmname LG3D
+
+# Start pipewire
+/usr/bin/pipewire &
+/usr/bin/pipewire-pulse &
+/usr/bin/pipewire-media-session &
 
 # Set wallpaper with nitrogen
 nitrogen --restore &
@@ -28,6 +32,7 @@ pasystray &
 
 # Configure keyboard
 setxkbmap -model pc105 -layout us,gr -option grp:rctrl_toggle -option ctrl:nocaps &
+xset r rate 260 32 &
 
 # Start polkit-gnome
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
