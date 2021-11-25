@@ -8,9 +8,9 @@
 wmname LG3D
 
 # Start pipewire
-/usr/bin/pipewire &
-/usr/bin/pipewire-pulse &
-/usr/bin/pipewire-media-session &
+pipewire &
+pipewire-pulse &
+wireplumbler &
 
 # Set wallpaper with nitrogen
 nitrogen --restore &
@@ -28,21 +28,31 @@ dwmblocks &
 picom &
 
 # Start the volume icon
-pasystray &
+volctl &
+
+# Start network applet
+nm-applet &
+
+# start pcmanfm
+pcmanfm -d &
+
+# start udiskie (for automounts)
+udiskie &
 
 # Configure keyboard
 setxkbmap -model pc105 -layout us,gr -option grp:rctrl_toggle -option ctrl:nocaps &
 xset r rate 260 32 &
 
 # Start polkit-gnome
-/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/libexec/polkit-gnome-authentication-agent-1 &
 
-# Start network applet
-cmst -m &
+# Start keyring
+eval $(/usr/bin/gnome-keyring-daemon --start --components=gpg,pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
 
 # Repeatedly start dwm for live restart
 while true; do
     # Log stderror to a file 
-    dwm 2> ~/.cache/dwm.log
+    dbus-launch --sh-syntax --exit-with-session dwm 2> ~/.cache/dwm.log
 done
 
