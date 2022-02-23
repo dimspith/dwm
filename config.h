@@ -80,7 +80,8 @@ static const Layout layouts[] = {
     { "~Tile~",       tile },    /* first entry is default */
     { "~Float~",      NULL },    /* no layout function means floating behavior */
     { "~Monocle~",    monocle },
-    { "~Deck~",       deck }
+    { "~Deck~",       deck },
+	{ "|+|",          tatami },
 };
 
 static const Rule rules[] = {
@@ -184,6 +185,7 @@ static Key keys[] = {
     { MODKEY|ControlMask,           XK_f,      setlayout,      {.v = &layouts[1]} },
     { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
     { MODKEY,                       XK_d,      setlayout,      {.v = &layouts[3]} },
+    { MODKEY,                       XK_y,      setlayout,      {.v = &layouts[4]} },
     { MODKEY|ControlMask,           XK_space,  setlayout,      {0} },
     { MODKEY,                       XK_f,      fullscreen,     {0} },
     { MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
